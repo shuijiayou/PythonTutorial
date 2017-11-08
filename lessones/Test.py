@@ -302,9 +302,9 @@ s2 = set([2,3,4])
 outputStr("s1和s2-交集：",s1&s2)
 outputStr("s1和s2-并集：",s1|s2)
 
-str = 'abc'
-str = str.replace('a','A')
-print(str)
+str1 = 'abc'
+str1 = str1.replace('a','A')
+print(str1)
 
 print("15 16 - 函数 调用函数")
 

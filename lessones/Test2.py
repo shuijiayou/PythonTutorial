@@ -201,6 +201,17 @@ def person_param_default(name, age, *, city='Hangzhou', job):
 
 person_param_default('Kaer', 20, job='IT ')
 
+print(math.sqrt(1849))
 
 
+# 使用命名关键字参数时，要特别注意， *不是参数，而是特殊分隔符。
+# 如果缺少*， Python 解释器将无法识别位置参数和命名关键字参数：
 
+def person(name, age, city, job):
+# 缺少 *， city 和 job 被视为位置参数
+    pass
+
+# 在 Python 中定义函数，可以用必选参数、默认参数、可变参数、关键
+# 字参数和命名关键字参数，这 5 种参数都可以组合使用，除了可变参数
+# 无法和命名关键字参数混合。但是请注意，参数定义的顺序必须是：必
+# 选参数、默认参数、可变参数/命名关键字参数和关键字参数。
