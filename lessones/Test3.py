@@ -176,19 +176,7 @@ print("tuple类型判断：",re)
 #小结
 # 运用列表生成式，可以快速生成 list，可以通过一个 list 推导出另一个 list，
 # 而代码却十分简洁。
-[1]
-[1,1]
-[1,2,1]
-[1,3,3,1]
-[1,4,6,4,1]
-[1,5,10,10,5,1]
-[1,6,15,20,15,6,1]
 
-def out(a,b=0):
-    print(a+b)
-
-for i in range(3):
-    print(i)
 #TODO
 LArray = [d for d in range(3) if d>0]
 print("5-4  生成器")
@@ -200,12 +188,62 @@ for Lgen in Lgenerator:
     print(Lgen)
 
 
+def fib(max):
+    n,a,b = 0,0,1
+    while n<max:
+        yield b
+        a,b = b,a+b
+        n+=1
+
+for fi in fib(6):
+    print("生成器输出斐波那契级数：",fi)
+
+# 这里，最难理解的就是 generator 和函数的执行流程不一样。函数是顺
+# 序执行，遇到 return 语句或者最后一行函数语句就返回。而变成
+# generator 的函数，在每次调用 next()的时候执行，遇到 yield 语句返回，
+# 再次执行时从上次返回的 yield 语句处继续执行。
+
+fi1 = fib(7)
+
+
+while True:
+    try:
+        print(next(fi1))
+    except StopIteration as e:
+        print('Generator return value:', e.value)
+        break
+
+
+#练习
+#0 [1]
+#1 [1,1]
+#(1-1[0],1-1[0])
+
+#2 [1,2,1]
+#(2-1[0] ,2-1[0] + 2-1[1], 2-1[1])
+
+#3 [1,3,3,1]
+#(3-1[0],3-1[0] + 3-1[1], 3-1[1] + 3-1[2] , 3-1[2])
+
+#4 [1,4,6,4,1]
+#5 [1,5,10,10,5,1]
+#6 [1,6,15,20,15,6,1]
+
+print("杨辉三角")
+
+def triangles(ma):
+    ltri = [1]
+    n=0
+    while n<ma:
+        yield ltri
+        ltri.append(0)
+        ltri = [ltri[i-1]+ltri[i] for i in range(len(ltri))]
+        n+=1
 
 
 
-
-
-
+for fo in triangles(5):
+    print(fo)
 
 
 
