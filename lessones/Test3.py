@@ -3,6 +3,7 @@
 
 
 import os
+import sys
 print("====20. 递归函数 ====")
 
 print("阶乘计算----")
@@ -93,7 +94,7 @@ print("\n\n\n 5-2 迭代")
 # 代对象上。
 
 print("dict对象的迭代")
-d = {'a': 1, 'b': 2, 'c': 3}
+d = {'a': 1, 'b': 2, 'c': 3,'c':6}
 # for dic in range(10):
 #    d[dic] = str(dic)+"a"
 
@@ -198,6 +199,14 @@ def fib(max):
 for fi in fib(6):
     print("生成器输出斐波那契级数：",fi)
 
+# fi_1 = fib(5)
+# print("while循环输出斐波那契：")
+# while True:
+#     try:
+#         print (next(fi_1), end="-")
+#     except :
+#         sys.exit()#执行此部分，则下面的内容都会停止执行。
+
 # 这里，最难理解的就是 generator 和函数的执行流程不一样。函数是顺
 # 序执行，遇到 return 语句或者最后一行函数语句就返回。而变成
 # generator 的函数，在每次调用 next()的时候执行，遇到 yield 语句返回，
@@ -246,14 +255,78 @@ for fo in triangles(5):
     print(fo)
 
 
+def tri(n):
+    Lt=[1]
+    init=0
+    while init<n:
+        yield Lt
+        # print(Lt)
+        Lt.append(0)
+        Lt = [Lt[i-1]+Lt[i] for i in range(len(Lt))]
+        init+=1
+print("自定义杨辉")
+for tr in tri(1):
+    print(tr)
 
 
+print("5-5 迭代器")
 
+print("这些可以直接作用于 for 循环的对象统称为可迭代对象： Iterable。(!= Iterator)")
 
+from collections import Iterable
+print("list是否可迭代：",isinstance([],Iterable))
+print("dict是否可迭代：",isinstance({},Iterable))
+print("str是否可迭代：",isinstance('abc',Iterable))
+print("tuple是否可迭代：",isinstance((),Iterable))
+print("列表生成式是否可迭代：",isinstance((x for x in range(3)),Iterable))
+print("数字是否可迭代：",isinstance(100,Iterable))
 
+print("可以被 next()函数调用并不断返回下一个值的对象称为迭代器：Iterator。(!=Iterable)")
 
+from collections import Iterator
+print("list是否为迭代器：",isinstance([],Iterator))
+print("dict是否为迭代器：",isinstance({},Iterator))
+print("str是否为迭代器：",isinstance('abc',Iterator))
+print("tuple是否为迭代器：",isinstance((),Iterator))
+print("列表生成式是否为迭代器：",isinstance((x for x in range(3)),Iterator))
+print("数字是否为迭代器：",isinstance(100,Iterator))
 
+print("生成器都是 Iterator 对象，但 list、 dict、 str 虽然是 Iterable，却不是Iterator。")
+print("把 list、 dict、 str 等 Iterable 变成 Iterator 可以使用 iter()函数")
 
+print("list使用iter()函数转化后，是否为迭代器：",isinstance(iter([]),Iterator))
+print("dict使用iter()函数转化后，是否为迭代器：",isinstance(iter({}),Iterator))
+print("str使用iter()函数转化后，是否为迭代器：",isinstance(iter('abc'),Iterator))
+print("tuple使用iter()函数转化后，是否为迭代器：",isinstance(iter(()),Iterator))
+# 你可能会问，为什么 list、 dict、 str 等数据类型不是 Iterator？
+# 这是因为 Python 的 Iterator 对象表示的是一个数据流， Iterator 对象可
+# 以被 next()函数调用并不断返回下一个数据，直到没有数据时抛出
+# StopIteration 错误。可以把这个数据流看做是一个有序序列，但我们却
+# 不能提前知道序列的长度，只能不断通过 next()函数实现按需计算下一
+# 个数据，所以 Iterator 的计算是惰性的，只有在需要返回下一个数据时
+# 它才会计算。
+# Iterator 甚至可以表示一个无限大的数据流，例如全体自然数。而使用
+# list 是永远不可能存储全体自然数的。
+
+print("6 - 函数式编程")
+print("6 -1 高阶函数")
+
+print("abs输出：",abs)
+print("abs(-10)=",abs(-10))
+print("abs(-10)是函数调用，而 abs 是函数本身。")
+f = abs
+
+print("f=abc[绝对值函数],则f(-3) = ",f(-3))
+print("成功！说明变量 f 现在已经指向了 abs 函数本身。直接调用 abs()函数和调用变量 f()完全相同。")
+print("函数名也是变量")
+
+abs=10
+try:
+    print("把 abs 指向 10 后:",abs(-6))
+except Exception as e:
+    print("异常",e)
+
+print("把 abs 指向 10 后，就无法通过 abs(-10)调用该函数了！因为 abs 这个变量已经不指向求绝对值函数而是指向一个整数 10！")
 
 
 
