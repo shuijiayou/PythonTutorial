@@ -320,24 +320,107 @@ print("f=abc[绝对值函数],则f(-3) = ",f(-3))
 print("成功！说明变量 f 现在已经指向了 abs 函数本身。直接调用 abs()函数和调用变量 f()完全相同。")
 print("函数名也是变量")
 
-abs=10
-try:
-    print("把 abs 指向 10 后:",abs(-6))
-except Exception as e:
-    print("异常",e)
+# abs=10
+# try:
+#     print("把 abs 指向 10 后:",abs(-6))
+# except Exception as e:
+#     print("异常",e)
 
 print("把 abs 指向 10 后，就无法通过 abs(-10)调用该函数了！因为 abs 这个变量已经不指向求绝对值函数而是指向一个整数 10！")
 
+# 当然实际代码绝对不能这么写，这里是为了说明函数名也是变量。要恢
+# 复 abs 函数，请重启 Python 交互环境。
+# 注：由于 abs 函数实际上是定义在__builtin__模块中的，所以要让修改
+# abs 变量的指向在其它模块也生效，要用__builtin__.abs = 10。
 
 
+print("高阶函数定义：一个函数可以接收另一个函数作为参数，这种函数就称之为高阶函数。")
+
+# 一个最简单的高阶函数：
+
+def add(x,y,f):
+    return f(x)+f(y)
+ad = add(-4,-5,abs)
+print(ad)
+
+print("6-2 map/reduce")
+
+def f(x):
+    return x*x;
+
+res = map(f,[1,3,5])
+print(list(res))
+
+strput = map(str,[1,2,3,4,5])
+print("数字list转换为str-list：",list(strput))
 
 
+print("reduce需要进行导入操作")
+from functools import reduce
+print("reduce计算list求和")
+def caladd(x,y):
+    return x*y
+red = reduce(caladd,[1,2,3,5,6])
+print(red)
+
+print("reduce将list按序组成数字，如[1,3,5,7,9]=>13579")
+
+def orderNum(x,y=0):
+    return x*10+y
+on =[5,4,3,2,1]
+num = reduce(orderNum,on)
+print(num)
+print("sum函数对数字list求和",sum(on))
+# print("sum函数对数字list求和",sum(['1','2']))#会抛异常
+def char2num(s):
+    return {'0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6,
+'7': 7, '8': 8, '9': 9,'.':'.'}[s]
+
+str_int = reduce(orderNum,map(char2num,'13567'))
+print("字符串转换为int类型：",str_int)
+
+print("使用lambda表达式处理")
+
+def str2int(s):
+    return reduce(lambda x,y:x*10+y,map(char2num,s))
+
+print("使用lambda表达式：",str2int('123789'))
+
+#练习
+print("map/reduce练习题")
+def normalize(name):
+
+    return name.capitalize()
+L1 = ['adam', 'LISA', 'barT']
+L2 = list(map(normalize,L1))
+
+print(L2)
 
 
+def prod(L):
+   return reduce(lambda x,y:x*y,L)
+
+print("reduce求积练习：",prod([3,5,7,9]))
 
 
+def str2float_1(s):
+    mapNum=[map(str2int,mapNum) for mapNum in s.split('.')]
+    intNum = reduce(lambda x, y: x * 10 + y, mapNum[0])
+    # pointNum = reduce(lambda x, y: x * 10 + y, mapNum[1])
+    # listLen = list(mapNum[1])
+    powNum = pow(10,-len(list(mapNum[1])))
+    return intNum+powNum
 
 
+def str2float(s):
+    mapNum=[map(str2int,mapNum) for mapNum in s.split('.')]
+    intNum = reduce(lambda x, y: x * 10 + y, mapNum[0])
+    pointNum = reduce(lambda x,y:x*10+y,mapNum[1])
 
+    powNum = pow(10,-len(str(pointNum)))
+    return intNum+pointNum*powNum
 
+print("str2float_1函数结果：",str2float_1('12.679'))
+print("str2float函数结果：",str2float('12.679'))
+print("int函数结果：",float('12.345'))
 
