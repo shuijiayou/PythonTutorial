@@ -4,15 +4,21 @@
 
 import os
 import sys
+from functools import reduce
+
 print("====20. 递归函数 ====")
 
 print("阶乘计算----")
-def fact(n=1):
-    if n==1:
-        return 1
-    return n*fact(n-1)
 
-print("100的阶乘：",fact(100))
+
+def fact(n=1):
+    if n == 1:
+        return 1
+    return n * fact(n - 1)
+
+
+print("100的阶乘：", fact(100))
+
 
 # print(len("93326215443944152681699238856266700490715968264381621468592963895217599993229915608941463976156518286253697920827223758251185210916864000000000000000000000000"))
 
@@ -20,68 +26,71 @@ print("100的阶乘：",fact(100))
 
 def f1(a, b, c=0, *args, **kw):
     print('a =', a, 'b =', b, 'c =', c, 'args =', args, 'kw =', kw)
+
+
 def f2(a, b, c=0, *, d, **kw):
     print('a =', a, 'b =', b, 'c =', c, 'd =', d, 'kw =', kw)
 
 
-f1(1,2)
-f1(1,2,c=12)
-f1(1,2,'a','b')
-f1(1,2,'a','b',ad='hello')
-f1(1,2,'a','b',ad='hello',bc='world')
-f2(1,2,d='命名关键字参数传参',x='关键字参数传参')
-tup =(1,2,3,4,5)
-kw={'d':99,'x':"$%"}
-f1(*tup,**kw)
-tu=(1,2,3)#如果tuple内容为1，2，3，4，5，则不会被正常调用
-f2(*tu,**kw)
+f1(1, 2)
+f1(1, 2, c=12)
+f1(1, 2, 'a', 'b')
+f1(1, 2, 'a', 'b', ad='hello')
+f1(1, 2, 'a', 'b', ad='hello', bc='world')
+f2(1, 2, d='命名关键字参数传参', x='关键字参数传参')
+tup = (1, 2, 3, 4, 5)
+kw = {'d': 99, 'x': "$%"}
+f1(*tup, **kw)
+tu = (1, 2, 3)  # 如果tuple内容为1，2，3，4，5，则不会被正常调用
+f2(*tu, **kw)
 
 
-
-#尾递归优化
+# 尾递归优化
 
 def factUp(n):
-    return fact_update(n,1)
+    return fact_update(n, 1)
 
-def fact_update(n,result):
-    if n==1:
+
+def fact_update(n, result):
+    if n == 1:
         return result
-    return fact_update(n-1,n*result)
+    return fact_update(n - 1, n * result)
+
 
 # print(factUp(6))
 print("\n\n\n")
 print("21 切片")
-#对这种经常取指定索引范围的操作，用循环十分繁琐，因此， Python提
+# 对这种经常取指定索引范围的操作，用循环十分繁琐，因此， Python提
 # 供了切片（ Slice）操作符，能大大简化这种操作。
 print("对这种经常取指定索引范围的操作，用循环十分繁琐，因此， Python提供了切片（ Slice）操作符，能大大简化这种操作。")
 
-L = ["1","2","3","4"]
-#取前三个元素
+L = ["1", "2", "3", "4"]
+# 取前三个元素
 print("循环取前三个元素")
 for i in range(3):
     print(L[i])
 
-print("切片方式获取前三个元素 L[0:3]：",L[0:3])
-#如果第一个索引为0，还可以省略
-print("省略索引0的切片 L[:3]：",L[:3])
-print("从1开始获取数据，切片 L[1:3]：",L[1:3])
-print("获取倒数第一个数据 L[-1] = ",L[-1])
-print("倒数切片数据获取 L[-3:] = ",L[-3:])
-print("倒数切片数据获取 L[-2:-1] = ",L[-2:-1])
+print("切片方式获取前三个元素 L[0:3]：", L[0:3])
+# 如果第一个索引为0，还可以省略
+print("省略索引0的切片 L[:3]：", L[:3])
+print("从1开始获取数据，切片 L[1:3]：", L[1:3])
+print("获取倒数第一个数据 L[-1] = ", L[-1])
+print("倒数切片数据获取 L[-3:] = ", L[-3:])
+print("倒数切片数据获取 L[-2:-1] = ", L[-2:-1])
 
 L = list(range(100))
 
-print("0-99的数列：L= ",L)
-print("前10个数：",L[:10])
-print("前10个数，每隔两个取一个 L[:10:2] = ",L[:10:2])
-print("所有数，每5个取一个 L[::5] = ",L[::5])
-print("list直接复制 L[:] = ",L[:])
+print("0-99的数列：L= ", L)
+print("前10个数：", L[:10])
+print("前10个数，每隔两个取一个 L[:10:2] = ", L[:10:2])
+print("所有数，每5个取一个 L[::5] = ", L[::5])
+print("list直接复制 L[:] = ", L[:])
 
 # tuple 也是一种 list，唯一区别是 tuple 不可变。因此， tuple 也可以用切
 # 片操作，只是操作的结果仍是 tuple
 
-print("tuple切片结果 ： ",(0,1,2,3,4,5)[:3])
-print("字符串切片：",'hello,python'[:8])
+print("tuple切片结果 ： ", (0, 1, 2, 3, 4, 5)[:3])
+print("字符串切片：", 'hello,python'[:8])
 
 # 有了切片操作，很多地方循环就不再需要了。 Python 的切片非常灵活，
 # 一行代码就可以实现很多行循环才能完成的操作。
@@ -94,19 +103,18 @@ print("\n\n\n 5-2 迭代")
 # 代对象上。
 
 print("dict对象的迭代")
-d = {'a': 1, 'b': 2, 'c': 3,'c':6}
+d = {'a': 1, 'b': 2, 'c': 3, 'c': 6}
 # for dic in range(10):
 #    d[dic] = str(dic)+"a"
 
 for key in d:
-    print(key ,"-",d[key])
-
+    print(key, "-", d[key])
 
 for value in d.values():
-     print("dict value:",value)
+    print("dict value:", value)
 
-for k,v in d.items():
-    print(k,v)
+for k, v in d.items():
+    print(k, v)
 # dict 的存储不是按照 list 的方式顺序排列，所以，迭代出的结果顺
 # 序很可能不一样。
 
@@ -116,88 +124,88 @@ for str1 in 'hello,string':
 # 最后一个小问题，如果要对 list 实现类似 Java 那样的下标循环怎么办？
 # Python 内置的 enumerate 函数可以把一个 list 变成索引-元素对，这样就
 # 可以在 for 循环中同时迭代索引和元素本身：
-li = ['a','b','c','d']
-for i,value in enumerate(li):
-    print(i,value)
+li = ['a', 'b', 'c', 'd']
+for i, value in enumerate(li):
+    print(i, value)
 
 print("两个值输出：")
-tuple_list = [(1,1),(2,3),(3,5)]
-for k,v in tuple_list:
-    print(k,v)
+tuple_list = [(1, 1), (2, 3), (3, 5)]
+for k, v in tuple_list:
+    print(k, v)
 
 print("23 - 列表生成式")
 print("小结：运用列表生成式，可以快速生成 list，可以通过一个 list 推导出另一个 list， 而代码却十分简洁。")
-print(list(range(1,10)))
-print(list(range(1,10,2)))
+print(list(range(1, 10)))
+print(list(range(1, 10, 2)))
 
-L =[];
-for x in range(1,11):
-    L.append(x*x)
+L = [];
+for x in range(1, 11):
+    L.append(x * x)
 
-print("L=",L)
-#列表生成式
-La = [m*m for m in range(1,11)]
-print("La =",La)
-#取偶数平方
-Lb = [m*m for m in range(1,11) if m%2==0]
-print("Lb = ",Lb)
+print("L=", L)
+# 列表生成式
+La = [m * m for m in range(1, 11)]
+print("La =", La)
+# 取偶数平方
+Lb = [m * m for m in range(1, 11) if m % 2 == 0]
+print("Lb = ", Lb)
 
-#for嵌套
+# for嵌套
 Lc = [m + n for m in 'ABC' for n in 'XYZ']
-print("Lc = ",Lc)
-
+print("Lc = ", Lc)
 
 print("导入os系统包")
 
 Ld = [d for d in os.listdir(".")]
-print("Ld =",Ld)
+print("Ld =", Ld)
 
-d = {'x': 'A', 'y': 'B', 'z': 'C' }
-Le = ['k='+k+',v='+v for k,v in d.items()]
-print("dict类型key和value获取：Le=",Le)
+d = {'x': 'A', 'y': 'B', 'z': 'C'}
+Le = ['k=' + k + ',v=' + v for k, v in d.items()]
+print("dict类型key和value获取：Le=", Le)
 
 L = ['Hello', 'World', 'IBM', 'Apple']
 
 print([alpha.lower() for alpha in L])
 
 # 不可使用关键字定义变量，也不能用变量类型定义变量
-#练习
+# 练习
 
 L1 = ['Hello', 'World', 18, 'Apple', None]
-L2 = [result for result in L1 if isinstance(result,str)]
-print("输出字符串类型  L2 = ",L2)
+L2 = [result for result in L1 if isinstance(result, str)]
+print("输出字符串类型  L2 = ", L2)
 
-#练习延伸
+# 练习延伸
 B = 'a', 'v'
 C = 'a string'
 
 re = isinstance(B, tuple)
-print("tuple类型判断：",re)
+print("tuple类型判断：", re)
 # print(isinstance(C, basestring))
-#小结
+# 小结
 # 运用列表生成式，可以快速生成 list，可以通过一个 list 推导出另一个 list，
 # 而代码却十分简洁。
 
-#TODO
-LArray = [d for d in range(3) if d>0]
+# TODO
+LArray = [d for d in range(3) if d > 0]
 print("5-4  生成器")
-Lgenerator = (d*d for d in range(10))
-print("Lcreate = ",Lgenerator)
-print("next(Lgenerator)输出方式：",next(Lgenerator),next(Lgenerator),next(Lgenerator))
+Lgenerator = (d * d for d in range(10))
+print("Lcreate = ", Lgenerator)
+print("next(Lgenerator)输出方式：", next(Lgenerator), next(Lgenerator), next(Lgenerator))
 
 for Lgen in Lgenerator:
     print(Lgen)
 
 
 def fib(max):
-    n,a,b = 0,0,1
-    while n<max:
+    n, a, b = 0, 0, 1
+    while n < max:
         yield b
-        a,b = b,a+b
-        n+=1
+        a, b = b, a + b
+        n += 1
+
 
 for fi in fib(6):
-    print("生成器输出斐波那契级数：",fi)
+    print("生成器输出斐波那契级数：", fi)
 
 # fi_1 = fib(5)
 # print("while循环输出斐波那契：")
@@ -214,7 +222,6 @@ for fi in fib(6):
 
 fi1 = fib(7)
 
-
 while True:
     try:
         print(next(fi1))
@@ -222,33 +229,32 @@ while True:
         print('Generator return value:', e.value)
         break
 
+# 练习
+# 0 [1]
+# 1 [1,1]
+# (1-1[0],1-1[0])
 
-#练习
-#0 [1]
-#1 [1,1]
-#(1-1[0],1-1[0])
+# 2 [1,2,1]
+# (2-1[0] ,2-1[0] + 2-1[1], 2-1[1])
 
-#2 [1,2,1]
-#(2-1[0] ,2-1[0] + 2-1[1], 2-1[1])
+# 3 [1,3,3,1]
+# (3-1[0],3-1[0] + 3-1[1], 3-1[1] + 3-1[2] , 3-1[2])
 
-#3 [1,3,3,1]
-#(3-1[0],3-1[0] + 3-1[1], 3-1[1] + 3-1[2] , 3-1[2])
-
-#4 [1,4,6,4,1]
-#5 [1,5,10,10,5,1]
-#6 [1,6,15,20,15,6,1]
+# 4 [1,4,6,4,1]
+# 5 [1,5,10,10,5,1]
+# 6 [1,6,15,20,15,6,1]
 
 print("杨辉三角")
 
+
 def triangles(ma):
     ltri = [1]
-    n=0
-    while n<ma:
+    n = 0
+    while n < ma:
         yield ltri
         ltri.append(0)
-        ltri = [ltri[i-1]+ltri[i] for i in range(len(ltri))]
-        n+=1
-
+        ltri = [ltri[i - 1] + ltri[i] for i in range(len(ltri))]
+        n += 1
 
 
 for fo in triangles(5):
@@ -256,48 +262,51 @@ for fo in triangles(5):
 
 
 def tri(n):
-    Lt=[1]
-    init=0
-    while init<n:
+    Lt = [1]
+    init = 0
+    while init < n:
         yield Lt
         # print(Lt)
         Lt.append(0)
-        Lt = [Lt[i-1]+Lt[i] for i in range(len(Lt))]
-        init+=1
+        Lt = [Lt[i - 1] + Lt[i] for i in range(len(Lt))]
+        init += 1
+
+
 print("自定义杨辉")
 for tr in tri(1):
     print(tr)
-
 
 print("5-5 迭代器")
 
 print("这些可以直接作用于 for 循环的对象统称为可迭代对象： Iterable。(!= Iterator)")
 
 from collections import Iterable
-print("list是否可迭代：",isinstance([],Iterable))
-print("dict是否可迭代：",isinstance({},Iterable))
-print("str是否可迭代：",isinstance('abc',Iterable))
-print("tuple是否可迭代：",isinstance((),Iterable))
-print("列表生成式是否可迭代：",isinstance((x for x in range(3)),Iterable))
-print("数字是否可迭代：",isinstance(100,Iterable))
+
+print("list是否可迭代：", isinstance([], Iterable))
+print("dict是否可迭代：", isinstance({}, Iterable))
+print("str是否可迭代：", isinstance('abc', Iterable))
+print("tuple是否可迭代：", isinstance((), Iterable))
+print("列表生成式是否可迭代：", isinstance((x for x in range(3)), Iterable))
+print("数字是否可迭代：", isinstance(100, Iterable))
 
 print("可以被 next()函数调用并不断返回下一个值的对象称为迭代器：Iterator。(!=Iterable)")
 
 from collections import Iterator
-print("list是否为迭代器：",isinstance([],Iterator))
-print("dict是否为迭代器：",isinstance({},Iterator))
-print("str是否为迭代器：",isinstance('abc',Iterator))
-print("tuple是否为迭代器：",isinstance((),Iterator))
-print("列表生成式是否为迭代器：",isinstance((x for x in range(3)),Iterator))
-print("数字是否为迭代器：",isinstance(100,Iterator))
+
+print("list是否为迭代器：", isinstance([], Iterator))
+print("dict是否为迭代器：", isinstance({}, Iterator))
+print("str是否为迭代器：", isinstance('abc', Iterator))
+print("tuple是否为迭代器：", isinstance((), Iterator))
+print("列表生成式是否为迭代器：", isinstance((x for x in range(3)), Iterator))
+print("数字是否为迭代器：", isinstance(100, Iterator))
 
 print("生成器都是 Iterator 对象，但 list、 dict、 str 虽然是 Iterable，却不是Iterator。")
 print("把 list、 dict、 str 等 Iterable 变成 Iterator 可以使用 iter()函数")
 
-print("list使用iter()函数转化后，是否为迭代器：",isinstance(iter([]),Iterator))
-print("dict使用iter()函数转化后，是否为迭代器：",isinstance(iter({}),Iterator))
-print("str使用iter()函数转化后，是否为迭代器：",isinstance(iter('abc'),Iterator))
-print("tuple使用iter()函数转化后，是否为迭代器：",isinstance(iter(()),Iterator))
+print("list使用iter()函数转化后，是否为迭代器：", isinstance(iter([]), Iterator))
+print("dict使用iter()函数转化后，是否为迭代器：", isinstance(iter({}), Iterator))
+print("str使用iter()函数转化后，是否为迭代器：", isinstance(iter('abc'), Iterator))
+print("tuple使用iter()函数转化后，是否为迭代器：", isinstance(iter(()), Iterator))
 # 你可能会问，为什么 list、 dict、 str 等数据类型不是 Iterator？
 # 这是因为 Python 的 Iterator 对象表示的是一个数据流， Iterator 对象可
 # 以被 next()函数调用并不断返回下一个数据，直到没有数据时抛出
@@ -311,12 +320,12 @@ print("tuple使用iter()函数转化后，是否为迭代器：",isinstance(iter
 print("6 - 函数式编程")
 print("6 -1 高阶函数")
 
-print("abs输出：",abs)
-print("abs(-10)=",abs(-10))
+print("abs输出：", abs)
+print("abs(-10)=", abs(-10))
 print("abs(-10)是函数调用，而 abs 是函数本身。")
 f = abs
 
-print("f=abc[绝对值函数],则f(-3) = ",f(-3))
+print("f=abc[绝对值函数],则f(-3) = ", f(-3))
 print("成功！说明变量 f 现在已经指向了 abs 函数本身。直接调用 abs()函数和调用变量 f()完全相同。")
 print("函数名也是变量")
 
@@ -336,91 +345,203 @@ print("把 abs 指向 10 后，就无法通过 abs(-10)调用该函数了！因�
 
 print("高阶函数定义：一个函数可以接收另一个函数作为参数，这种函数就称之为高阶函数。")
 
+
 # 一个最简单的高阶函数：
 
-def add(x,y,f):
-    return f(x)+f(y)
-ad = add(-4,-5,abs)
+def add(x, y, f):
+    return f(x) + f(y)
+
+
+ad = add(-4, -5, abs)
 print(ad)
 
 print("6-2 map/reduce")
 
-def f(x):
-    return x*x;
 
-res = map(f,[1,3,5])
+def f(x):
+    return x * x;
+
+
+res = map(f, [1, 3, 5])
 print(list(res))
 
-strput = map(str,[1,2,3,4,5])
-print("数字list转换为str-list：",list(strput))
-
+strput = map(str, [1, 2, 3, 4, 5])
+print("数字list转换为str-list：", list(strput))
 
 print("reduce需要进行导入操作")
-from functools import reduce
+
+
 print("reduce计算list求和")
-def caladd(x,y):
-    return x*y
-red = reduce(caladd,[1,2,3,5,6])
+
+
+def caladd(x, y):
+    return x * y
+
+
+red = reduce(caladd, [1, 2, 3, 5, 6])
 print(red)
 
 print("reduce将list按序组成数字，如[1,3,5,7,9]=>13579")
 
-def orderNum(x,y=0):
-    return x*10+y
-on =[5,4,3,2,1]
-num = reduce(orderNum,on)
+
+def orderNum(x, y=0):
+    return x * 10 + y
+
+
+on = [5, 4, 3, 2, 1]
+num = reduce(orderNum, on)
 print(num)
-print("sum函数对数字list求和",sum(on))
+print("sum函数对数字list求和", sum(on))
+
+
 # print("sum函数对数字list求和",sum(['1','2']))#会抛异常
 def char2num(s):
     return {'0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6,
-'7': 7, '8': 8, '9': 9,'.':'.'}[s]
+            '7': 7, '8': 8, '9': 9, '.': '.'}[s]
 
-str_int = reduce(orderNum,map(char2num,'13567'))
-print("字符串转换为int类型：",str_int)
+
+str_int = reduce(orderNum, map(char2num, '13567'))
+print("字符串转换为int类型：", str_int)
 
 print("使用lambda表达式处理")
 
+
 def str2int(s):
-    return reduce(lambda x,y:x*10+y,map(char2num,s))
+    return reduce(lambda x, y: x * 10 + y, map(char2num, s))
 
-print("使用lambda表达式：",str2int('123789'))
 
-#练习
+print("使用lambda表达式：", str2int('123789'))
+
+# 练习
 print("map/reduce练习题")
-def normalize(name):
 
+
+def normalize(name):
     return name.capitalize()
+
+
 L1 = ['adam', 'LISA', 'barT']
-L2 = list(map(normalize,L1))
+L2 = list(map(normalize, L1))
 
 print(L2)
 
 
 def prod(L):
-   return reduce(lambda x,y:x*y,L)
-
-print("reduce求积练习：",prod([3,5,7,9]))
+    return reduce(lambda x, y: x * y, L)
 
 
+print("reduce求积练习：", prod([3, 5, 7, 9]))
+
+
+# TODO 该函数注释部分解开之后返回结果异常，不懂。
 def str2float_1(s):
-    mapNum=[map(str2int,mapNum) for mapNum in s.split('.')]
+    mapNum = [map(str2int, mapNum) for mapNum in s.split('.')]
     intNum = reduce(lambda x, y: x * 10 + y, mapNum[0])
     # pointNum = reduce(lambda x, y: x * 10 + y, mapNum[1])
     # listLen = list(mapNum[1])
-    powNum = pow(10,-len(list(mapNum[1])))
-    return intNum+powNum
+    powNum = pow(10, -len(list(mapNum[1])))
+    return intNum + powNum
 
 
 def str2float(s):
-    mapNum=[map(str2int,mapNum) for mapNum in s.split('.')]
+    mapNum = [map(str2int, mapNum) for mapNum in s.split('.')]
     intNum = reduce(lambda x, y: x * 10 + y, mapNum[0])
-    pointNum = reduce(lambda x,y:x*10+y,mapNum[1])
+    pointNum = reduce(lambda x, y: x * 10 + y, mapNum[1])
 
-    powNum = pow(10,-len(str(pointNum)))
-    return intNum+pointNum*powNum
+    powNum = pow(10, -len(str(pointNum)))
+    return intNum + pointNum * powNum
 
-print("str2float_1函数结果：",str2float_1('12.679'))
-print("str2float函数结果：",str2float('12.679'))
-print("int函数结果：",float('12.345'))
+
+print("str2float_1函数结果：", str2float_1('12.679'))
+print("str2float函数结果：", str2float('12.679'))
+print("int函数结果：", float('12.345'))
+
+print("6-3 filter")
+
+# 和 map()不同的是，filter()把传入的函数依次作用于每个元素，然后根据返回值是 True 还
+# 是 False 决定保留还是丢弃该元素。
+def is_odd(s):
+    return s % 2 == 1
+
+
+isodd = filter(is_odd, [1, 2, 3, 4, 5, 6, 7])
+print(list(isodd))
+print("strip函数：只要边（开头或结尾）上的字符在删除序列内，就删除掉。")
+print("删除空白符函数strip：", "原有字符长度 aa b-", len(' aa b'), 'strip之后：',
+      len(' aa b'.strip()))  # 默认删除空白符（包括'\n', '\r',  '\t',  ' ')
+
+
+# TODO 返回true or false
+def not_empty(s):
+    return s and s.strip()
+
+
+filt = filter(not_empty, ['A', '', 'B', None, 'C', ' '])
+print("删除序列中的空字符串：", list(filt))
+# emp = ''
+print("非空判断：", str('abc ' and 'abc '.strip()))
+
+print("使用filter求素数")
+
+
+# 计算素数的一个方法是埃氏筛法，
+# 1. 定义生成器(奇数数列)
+def _odd_iter(n):
+    x = 3
+    while x < n:
+        yield x
+        x += 2
+    return x
+
+# 2. 定义筛选函数
+def _not_divisible(n):
+    bk = lambda x: x % n > 0
+    return bk
+
+def primes(n):
+    yield 2
+    it = _odd_iter(n)  # 初始序列
+    # print(list(it))
+    while True:
+        m = next(it)
+        yield m
+        it = filter(_not_divisible(m), it)  # 构造新序列
+
+print("primes:",list(primes(12)))
+print("_odd_iter:",list(_odd_iter(12)))
+
+
+
+
+print(
+    reduce(
+        lambda l, y:#递减的操作函数
+        not 0 in map(lambda x: y % x, l) and l + [y] or l,#l是一个列表[], 结果l中后加入的数不能被前数整除，被整除则不添加后数
+        [2,3,4,5,6,7],
+        # range(2, 120),#范围[2,12)
+        []))
+
+# 过程是:
+# 测试到6， 就把6依次整除之前的l=[2,3,5] ，除2余0，就放弃6。l仍是[2,3,5]
+# 测试到7， 就把7依次整除之前的l=[2,3,5] ，除2都不余0，加入6。l变成[2,3,5,7]
+# 最后得到一个纯素数的列表[];
+
+# 练习
+# 回数是指从左向右读和从右向左读都是一样的数，例如 12321， 909。请
+# 利用 filter()滤掉非回数：
+print("练习：回数计算")
+def reverse(n):
+    res = ''
+    m = str(n)
+    for i in m:
+        res=i+res
+    return res
+
+def is_palindrome(n):
+    if len(str(n))<2:
+        return False
+    return reverse(n)==str(n)
+
+output = filter(is_palindrome, range(1, 1000))
+print(list(output))
 
