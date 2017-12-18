@@ -150,7 +150,7 @@ print("删除之后的结果数据---"+str(classmates))
 dataList = ['String',123,True]
 # list 元素也可以是另一个 list
 s = ['python', 'java', ['asp', 'php'], 'scheme']
-# 另一种有序列表叫元组： tuple。uple 和 list 非常类似，但是 tuple 一旦初始化就不能修改，比如同样是列出同学的名字
+# 另一种有序列表叫元组： tuple。tuple 和 list 非常类似，但是 tuple 一旦初始化就不能修改，比如同样是列出同学的名字
 
 #tuple
 students = ('Mike','Jack','John')
