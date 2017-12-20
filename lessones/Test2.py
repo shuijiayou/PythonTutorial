@@ -119,8 +119,8 @@ print("循环五次结果如下：已经正确")
 for i in range(5):
     print(add_end_handle())
 
-print("range(1,2,1) 循环输出，查看结果：")
-for i in range(1,2,1):#类似于Java版for(int i=1;i<2;i++)
+print("range(1,3,1) 循环输出，查看结果：")
+for i in range(1,3,1):#类似于Java版for(int i=1;i<2;i++)
     print(i)
 
 def enroll(name, gender, age=6, city='Beijing'):
@@ -129,7 +129,7 @@ def enroll(name, gender, age=6, city='Beijing'):
     print('age:', age)
     print('city:', city)
 
-enroll('jiayou',3)
+enroll('jiayou','boy')
 
 print("可变参数设置方式")
 

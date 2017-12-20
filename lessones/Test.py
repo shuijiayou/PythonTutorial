@@ -269,7 +269,7 @@ for out in L:
 print("14 - 使用 dict 和 set")
 
 # Python 内置了字典： dict 的支持， dict 全称 dictionary，在其他语言中也
-# 称为 map，使用键-值（ key-value）存储，具有极快的查找速度。
+# 称为 map，使用键-值（ key-value）存储，具有极快的查找速度。python中的map表示高阶函数
 
 d = {'Michael':98,'jack':88,'John':76}
 outputStr("Michael成绩：",d['Michael'])
