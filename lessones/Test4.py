@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from functools import reduce
+
 print("6 - 函数式编程")
 print("6 -1 高阶函数")
 
@@ -54,7 +55,6 @@ strput = map(str, [1, 2, 3, 4, 5])
 print("数字list转换为str-list：", list(strput))
 
 print("reduce需要进行导入操作")
-
 
 print("reduce计算list求和")
 
@@ -143,6 +143,7 @@ print("int函数结果：", float('12.345'))
 
 print("6-3 filter")
 
+
 # 和 map()不同的是，filter()把传入的函数依次作用于每个元素，然后根据返回值是 True 还
 # 是 False 决定保留还是丢弃该元素。
 def is_odd(s):
@@ -178,10 +179,12 @@ def _odd_iter(n):
         x += 2
     return x
 
+
 # 2. 定义筛选函数
 def _not_divisible(n):
     bk = lambda x: x % n > 0
     return bk
+
 
 def primes(n):
     yield 2
@@ -192,17 +195,15 @@ def primes(n):
         yield m
         it = filter(_not_divisible(m), it)  # 构造新序列
 
-print("primes:",list(primes(12)))
-print("_odd_iter:",list(_odd_iter(12)))
 
-
-
+print("primes:", list(primes(12)))
+print("_odd_iter:", list(_odd_iter(12)))
 
 print(
     reduce(
-        lambda l, y:#递减的操作函数
-        not 0 in map(lambda x: y % x, l) and l + [y] or l,#l是一个列表[], 结果l中后加入的数不能被前数整除，被整除则不添加后数
-        [2,3,4,5,6,7],
+        lambda l, y:  # 递减的操作函数
+        not 0 in map(lambda x: y % x, l) and l + [y] or l,  # l是一个列表[], 结果l中后加入的数不能被前数整除，被整除则不添加后数
+        [2, 3, 4, 5, 6, 7],
         # range(2, 120),#范围[2,12)
         []))
 
@@ -215,37 +216,148 @@ print(
 # 回数是指从左向右读和从右向左读都是一样的数，例如 12321， 909。请
 # 利用 filter()滤掉非回数：
 print("练习：回数计算")
+
+
 def reverse(n):
     res = ''
     m = str(n)
     for i in m:
-        res=i+res
+        res = i + res
     return res
 
+
 def is_palindrome(n):
-    if len(str(n))<2:
+    if len(str(n)) < 2:
         return False
-    return reverse(n)==str(n)
+    return reverse(n) == str(n)
+
 
 output = filter(is_palindrome, range(1, 1000))
 print(list(output))
 
 print("6-4 sorted")
 
-#默认排序操作
-print(sorted([3,-12,1,0,12,45]))
+# 默认排序操作
+print(sorted([3, -12, 1, 0, 12, 45]))
 
-#自定义排序操作
-#sorted()函数也是一个高阶函数，它还可以接收一个 key 函数来实现自定义的排序，例如按绝对值大小排序
-print(sorted([3,-12,1,0,12,45],key=abs))
+# 自定义排序操作
+# sorted()函数也是一个高阶函数，它还可以接收一个 key 函数来实现自定义的排序，例如按绝对值大小排序
+print(sorted([3, -12, 1, 0, 12, 45], key=abs))
 
-def sortData(n):
-    print(n+10)
-    return abs(n+10)
-
-print(sorted([3,-12,1,0,12,45],key=sortData))
-
-#对字母排序，按照大小写的ASCII码进行排序
-print(sorted(['Credit','abs','Adam','baby']))
+# 对字母排序，按照大小写的ASCII码进行排序
+print(sorted(['Credit', 'abs', 'Adam', 'baby']))
 print("不区分大小写进行排序")
-print(sorted(['Credit','abs','Adam','baby'],key=str.lower))
+print(sorted(['Credit', 'abs', 'Adam', 'baby'], key=str.lower))
+print("反向排序")
+print(sorted(['bob', 'about', 'Zoo', 'Credit'], key=str.lower, reverse=True))
+
+print("练习")
+L = [('Bob', 75), ('adam', 92), ('Bart', 66), ('Lisa', 88)]
+
+
+def by_name(n):
+    return tuple(n)[0].lower()
+
+
+print("按照名字不区分大小写排序：", sorted(L, key=by_name))
+
+
+def by_score(n):
+    return tuple(n)[1]
+
+
+print("按照分数排序：", sorted(L, key=by_score))
+
+print("6-5 返回函数")
+
+
+def calc_sum(*args):
+    ax = 0
+    for n in args:
+        ax = ax + n
+    return ax
+
+
+def lazy_sum(*args):
+    def sum():
+        ax = 0
+        for n in args:
+            ax = ax + n
+        return ax
+
+    return sum
+
+
+su = lazy_sum(1, 3, 5, 7, 9)
+print("返回函数信息：", su)
+print("调用返回函数，计算求和结果：", su())
+# 请再注意一点，当我们调用 lazy_sum()时，每次调用都会返回一个新的
+# 函数，即使传入相同的参数
+su_2 = lazy_sum(1, 3, 5, 7, 9)
+print(su == su_2)
+# 我们在函数 lazy_sum 中又定义了函数 sum，并且，内部
+# 函数 sum 可以引用外部函数 lazy_sum 的参数和局部变量，当 lazy_sum 返
+# 回函数 sum 时，相关参数和变量都保存在返回的函数中，这种称为“闭包
+# （ Closure） ”的程序结构拥有极大的威力。
+
+
+print("闭包")
+
+
+def count():
+    fs = []
+    for i in range(1, 4):
+        def f():
+            return i * i
+
+        fs.append(f)
+    return fs
+
+
+f1, f2, f3 = count()
+print("输出f1,f2,f3函数调用结果：", f1(), f2(), f3())
+
+
+# 你可能认为调用 f1()， f2()和 f3()结果应该是 1， 4， 9，但实际结果是：9 9 9
+# 全部都是 9！原因就在于返回的函数引用了变量 i，但它并非立刻执行。
+# 等到 3 个函数都返回时，它们所引用的变量 i 已经变成了 3，因此最终
+# 结果为 9。
+
+# 返回闭包时牢记的一点就是：返回函数不要引用任何循环变量， 或者后
+# 续会发生变化的变量。
+
+# 如果一定要引用循环变量怎么办？方法是再创建一个函数，用该函数的
+# 参数绑定循环变量当前的值，无论该循环变量后续如何更改，已绑定到
+# 函数参数的值不变：
+def count_1():
+    def rs(n):
+        def g():
+            return n * n
+
+        return g
+
+    fs = []
+    for i in range(1, 4):
+        fs.append(rs(i))
+
+    return fs
+
+
+g1, g2, g3 = count_1()
+print("输出g1,g2,g3函数调用结果：", g1(), g2(), g3())
+
+
+# 使用lambda进行压缩
+def count_2():
+    def rs(n):
+        return lambda : n * n
+
+    fs = []
+    for i in range(1, 4):
+        fs.append(rs(i))
+
+    return fs
+
+
+gg1, gg2, gg3 = count_1()
+print("输出gg1,gg2,gg3函数调用结果：", gg1(), gg2(), gg3())
