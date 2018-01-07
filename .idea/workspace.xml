@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fd8887d2-fdbb-42be-aa04-f25c79414e85" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lambda/knowledge.py" afterPath="$PROJECT_DIR$/lambda/knowledge.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lessones/Test2.py" afterPath="$PROJECT_DIR$/lessones/Test2.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lessones/Test4.py" afterPath="$PROJECT_DIR$/lessones/Test4.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,7 +17,7 @@
     <SUITE FILE_PATH="coverage/PythonTutorial$Test3.coverage" NAME="Test3 Coverage Results" MODIFIED="1513244610916" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lessones" />
     <SUITE FILE_PATH="coverage/PythonTutorial$Test2.coverage" NAME="Test2 Coverage Results" MODIFIED="1513570596461" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lessones" />
     <SUITE FILE_PATH="coverage/PythonTutorial$lessones.coverage" NAME="lessones Coverage Results" MODIFIED="1511068001460" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/runoob/com" />
-    <SUITE FILE_PATH="coverage/PythonTutorial$Test4.coverage" NAME="Test4 Coverage Results" MODIFIED="1513909702876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lessones" />
+    <SUITE FILE_PATH="coverage/PythonTutorial$Test4.coverage" NAME="Test4 Coverage Results" MODIFIED="1515293953870" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lessones" />
     <SUITE FILE_PATH="coverage/PythonTutorial$knowledge.coverage" NAME="knowledge Coverage Results" MODIFIED="1513910332515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lambda" />
     <SUITE FILE_PATH="coverage/PythonTutorial$Packing.coverage" NAME="Packing Coverage Results" MODIFIED="1504686999598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lessones" />
   </component>
@@ -39,8 +37,8 @@
       <file leaf-file-name="Test2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lessones/Test2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3689">
-              <caret line="217" column="21" lean-forward="false" selection-start-line="217" selection-start-column="21" selection-end-line="217" selection-end-column="21" />
+            <state relative-caret-position="-766">
+              <caret line="133" column="11" lean-forward="false" selection-start-line="133" selection-start-column="7" selection-end-line="133" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -56,17 +54,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Test4.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Test4.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lessones/Test4.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5848">
-              <caret line="344" column="0" lean-forward="false" selection-start-line="344" selection-start-column="0" selection-end-line="344" selection-end-column="0" />
+            <state relative-caret-position="436">
+              <caret line="406" column="4" lean-forward="false" selection-start-line="406" selection-start-column="4" selection-end-line="406" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="knowledge.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="knowledge.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lambda/knowledge.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
@@ -144,8 +142,8 @@
         <option value="$PROJECT_DIR$/lessones/Test.py" />
         <option value="$PROJECT_DIR$/lessones/Test3.py" />
         <option value="$PROJECT_DIR$/lessones/Test2.py" />
-        <option value="$PROJECT_DIR$/lessones/Test4.py" />
         <option value="$PROJECT_DIR$/lambda/knowledge.py" />
+        <option value="$PROJECT_DIR$/lessones/Test4.py" />
       </list>
     </option>
   </component>
@@ -156,9 +154,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="42" />
+    <option name="x" value="662" />
     <option name="y" value="23" />
-    <option name="width" value="1238" />
+    <option name="width" value="618" />
     <option name="height" value="777" />
   </component>
   <component name="ProjectView">
@@ -248,7 +246,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.knowledge">
+  <component name="RunManager" selected="Python.Test4">
     <configuration default="false" name="Test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -501,8 +499,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.knowledge" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Test4" />
+        <item index="0" class="java.lang.String" itemvalue="Python.Test4" />
+        <item index="1" class="java.lang.String" itemvalue="Python.knowledge" />
         <item index="2" class="java.lang.String" itemvalue="Python.Test2" />
         <item index="3" class="java.lang.String" itemvalue="Python.Test" />
         <item index="4" class="java.lang.String" itemvalue="Python.Test3" />
@@ -526,14 +524,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="42" y="23" width="1238" height="777" extended-state="6" />
+    <frame x="662" y="23" width="618" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28511706" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28953975" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928678" sideWeight="0.50297874" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18361153" sideWeight="0.4970213" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18361153" sideWeight="0.4970213" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -560,7 +558,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32776934" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28085107" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28953975" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -942,26 +940,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lambda/knowledge.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="20" lean-forward="false" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lessones/Test2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3689">
-          <caret line="217" column="21" lean-forward="false" selection-start-line="217" selection-start-column="21" selection-end-line="217" selection-end-column="21" />
+        <state relative-caret-position="-766">
+          <caret line="133" column="11" lean-forward="false" selection-start-line="133" selection-start-column="7" selection-end-line="133" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lessones/Test4.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5848">
-          <caret line="344" column="0" lean-forward="false" selection-start-line="344" selection-start-column="0" selection-end-line="344" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lambda/knowledge.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="20" lean-forward="false" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+        <state relative-caret-position="436">
+          <caret line="406" column="4" lean-forward="false" selection-start-line="406" selection-start-column="4" selection-end-line="406" selection-end-column="4" />
           <folding />
         </state>
       </provider>

@@ -350,7 +350,7 @@ print("输出g1,g2,g3函数调用结果：", g1(), g2(), g3())
 # 使用lambda进行压缩
 def count_2():
     def rs(n):
-        return lambda : n * n
+        return lambda: n * n
 
     fs = []
     for i in range(1, 4):
@@ -361,3 +361,47 @@ def count_2():
 
 gg1, gg2, gg3 = count_1()
 print("输出gg1,gg2,gg3函数调用结果：", gg1(), gg2(), gg3())
+
+# 小结
+# 1. 一个函数可以返回一个计算结果，也可以返回一个函数。
+# 2. 返回一个函数时，牢记该函数并未执行，返回函数中不要引用任何可能会变化的变量。
+
+print("6-6 匿名函数")
+
+# 在 Python 中，对匿名函数提供了有限支持。还是以 map()函数为例，计
+# 算 f(x)=x2 时，除了定义一个 f(x)的函数外，还可以直接传入匿名函数：
+# list(map(lambda x: x * x, [1, 2, 3, 4, 5, 6, 7, 8, 9]))
+# 关键字 lambda 表示匿名函数，冒号前面的 x 表示函数参数。
+
+print(list(map(lambda x: x * x, [1, 2, 3, 4, 5])))
+# 注意：匿名函数有个限制，就是只能有一个表达式，不用写 return，返回值就
+# 是该表达式的结果。
+
+anonymity = lambda x:x*x
+
+print("匿名函数变量求值：",anonymity(12))
+print(anonymity.__name__)
+# 也可以把匿名函数作为返回值返回
+def build(x, y):
+    return lambda: x * x + y * y
+#小结：
+# Python 对匿名函数的支持有限，只有一些简单的情况下可以使用匿名函数。
+
+print("6-7 装饰器")
+# 函数对象有一个__name__属性，可以拿到函数的名字：
+print("获取 6-5 章节的函数count_2名称：",count_2.__name__)
+# 在函数调用前后自动
+# 打印日志，但又不希望修改 now()函数的定义，这种在代码运行期间动
+# 态增加功能的方式，称之为“装饰器”（ Decorator）。
+
+def log(func):
+    def wrapper(*args,**kw):
+        print('call %s():'%func.__name__)
+        return func(*args,**kw)
+    return wrapper
+
+@log
+def now():
+    print('2018-1-7 10:58')
+
+now()
