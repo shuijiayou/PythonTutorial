@@ -3,7 +3,7 @@
 def printStr(str):
     print("====",str.__name__,"函数输出：====")
 
-
+# http://python.jobbole.com/85056/
 #装饰器学习
 a_string = "This is a global variable"
 def foo():
