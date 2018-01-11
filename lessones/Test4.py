@@ -405,3 +405,23 @@ def now():
     print('2018-1-7 10:58')
 
 now()
+
+def logString(text):
+    def decorator(func):
+        def wrapper(*args,**kw):
+            print('%s 方法 %s() 被调用。%s'%(text,func.__name__,args))
+            return func(*args,**kw)
+        return wrapper
+    return decorator
+#这个三层嵌套的decorator用法如下：
+@logString('定义日志输出的固定内容：')
+def now():
+    print('2018-1-7 17:04')
+
+now()
+@logString('函数之后进行日志输出：')
+def define(input):
+    print('2018-1-10 16:55,输入信息为：',input)
+
+define('你好，python。我一直在加油')
+
