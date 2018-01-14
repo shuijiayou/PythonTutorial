@@ -407,10 +407,10 @@ def now():
 now()
 
 def logString(text):
-    def decorator(func):
+    def decorator(fun):
         def wrapper(*args,**kw):
-            print('%s 方法 %s() 被调用。%s'%(text,func.__name__,args))
-            return func(*args,**kw)
+            print('%s 方法 %s() 被调用。%s'%(text,fun.__name__,args))
+            return fun(*args,**kw)
         return wrapper
     return decorator
 #这个三层嵌套的decorator用法如下：
