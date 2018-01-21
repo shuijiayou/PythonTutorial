@@ -425,3 +425,75 @@ def define(input):
 
 define('你好，python。我一直在加油')
 
+#练习
+
+def printContent(func):
+    def wrapper(*args,**kwargs):#该函数无返回值
+        print("begin call")
+        rt = func(*args,**kwargs)
+        print("end call")
+        return rt
+    return wrapper
+
+@printContent
+def practice(text):
+    print("装饰器printContent —— 练习题1 结果：",text)
+
+practice('SUCCESS!')
+
+def multiPrint(cont):
+    def wrapper(func):
+        def wrap(*arg,**kw):
+            print("多重输出：%s,method=%s"%( cont,func.__name__))
+            return func(*arg,**kw)
+        return wrap
+    if isinstance(cont,str):
+    # if (str(cont) and str(cont).strip()):
+        return wrapper
+    else:
+        return wrapper(cont)
+
+#问题：为什么只能用类型判断函数进行参数判断，而不能直接类型转换，然后判断内容？
+
+@multiPrint('input')
+def testHasParam():
+    print("装饰器-多重输出1-有参数")
+
+print('装饰器2习题-multiPrint')
+
+
+@multiPrint
+def testNoParam():
+    print("装饰器-多重输出2-无参数")
+
+testHasParam()
+testNoParam()
+
+print("6-8 偏函数")
+
+#int('',base=) 将输入的字符串转换为10进制，或者指定输入的进制类型，然后按照10进制进行输出
+print("十进制输出",int('12'))
+print("八进制输出",int('12345',base=8))
+print("十六进制输出",int('a',base=16))
+
+import functools
+int16 = functools.partial(int,base=16)
+print(int16('abcdef'))
+
+# functools.partial 的作用就是，把一个函数的某些参数
+# 给固定住（也就是设置默认值），返回一个新的函数，调用这个新函数
+# 会更简单。
+kw = {'base':2}
+print('偏函数赋值解析：',int('100',**kw))
+
+funcMax = functools.partial(max,10)
+
+print(funcMax(2,3))
+#解析：funcMax函数相当于如下操作：
+# args = (2,3,10)
+# print(funcMax(*args))
+
+#小结
+# 当函数的参数个数太多，需要简化时，使用 functools.partial 可以创建
+# 一个新的函数，这个新函数可以固定住原函数的部分参数，从而在调用
+# 时更简单。
