@@ -51,7 +51,7 @@ def test():
 from PIL import Image
 print("========7-2 安装第三方模块====")
 
-im = Image.open('/Users/yujinshui/Desktop/个人处理/1451033541380.jpg')
+im = Image.open('/Users/yujinshui/Desktop/1.png')
 print("获取的图片信息",im.format,im.size,im.mode)
 #如何将宽高比等比缩放
 width,height = im.size
@@ -60,7 +60,8 @@ print("图片压缩操作")
 im.thumbnail((width/10,height/10))
 
 print("压缩后的图片宽度：",width/10,'高度：',height/10)
-im.save('/Users/yujinshui/Desktop/个人处理/thumb.jpg','jpeg')
+im.save('/Users/yujinshui/Desktop/11.png','png')
+# im.save('/Users/yujinshui/Desktop/个人处理/thumb.jpg','jpeg')
 print("图片压缩成功")
 
 print(sys.path)

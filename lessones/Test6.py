@@ -129,6 +129,13 @@ class PriStudent(object):
     def get_score(self):
         return self.__score
 
+    def set_score(self,score):
+        if 0<=score<=100:
+            self.__score = score
+        else:
+            raise ValueError('bad score')
+
+
 
 # 改完后，对于外部代码来说，没什么变动，但是已经无法从外部访问实
 # 例变量.__name 和实例变量.__score 了：
@@ -141,3 +148,73 @@ priBart = PriStudent('Bart Simpon',59)
 #获取__name和__score属性的值
 
 print('通过get方式获取私有属性的值',priBart.get_name(),priBart.get_score())
+
+
+# 需要注意的是，在 Python 中，变量名类似__xxx__的，也就是以双下划
+# 线开头，并且以双下划线结尾的，是特殊变量，特殊变量是可以直接访
+# 问的，不是 private 变量，所以，不能用__name__、 __score__这样的变量名。
+
+# priBart.set_score(102)
+print('设置set值之后：',priBart.get_score())
+
+
+# 有些时候，你会看到以一个下划线开头的实例变量名，比如_name，这样
+# 的实例变量外部是可以访问的，但是，按照约定俗成的规定，当你看到
+# 这样的变量时，意思就是， “虽然我可以被访问，但是，请把我视为私
+# 有变量，不要随意访问”
+
+# 双下划线开头的实例变量是不是一定不能从外部访问呢？其实也不是。
+# 不能直接访问__name 是因为 Python 解释器对外把__name 变量改成了
+# _Student__name，所以，仍然可以通过_Student__name 来访问__name 变量：
+
+print('私有变量访问：',priBart._PriStudent__name)
+## 但是强烈建议你不要这么干，因为不同版本的 Python 解释器可能会把
+## __name 改成不同的变量名。
+# 总的来说就是， Python 本身没有任何机制阻止你干坏事，一切全靠自觉
+
+
+print('========8 - 3 继承和多态 ')
+
+class Animal(object):
+    def run(self):
+        print('Animal is running...')
+
+class Dog(Animal):
+    def run(self):
+        print('Dog is running...')
+
+    def eat(self):
+        print('Eating meat...')
+
+class Cat(Animal):
+    def run(self):
+        print('Cat is running...')
+
+    def eat(self):
+        print('Eating meat...')
+
+dog = Dog()
+dog.run()
+cat = Cat()
+cat.run()
+
+print('子类的实例对象是否属于父类类型：',isinstance(dog,Animal))
+
+def run_object(object):
+    object.run()
+
+
+run_object(Dog())
+
+
+print('静态语言 VS 动态语言')
+# 对于 Python 这样的动态语言来说，则不一定需要传入 Animal 类型。我
+# 们只需要保证传入的对象有一个 run()方法就可以了
+
+class Timer(object):
+    def run(self):
+        print('timer is running...')
+
+
+run_object(Timer(   ))
+
