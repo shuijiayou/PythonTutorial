@@ -3,6 +3,8 @@
 
 print("====8 - 面向对象编程====")
 
+#包含不同的变量类型说明
+
 # 面向过程的程序设计把计算机程序视为一系列的命令集合，即一组函数
 # 的顺序执行。为了简化程序设计，面向过程把函数继续切分为子函数，
 # 即把大块函数通过切割成小块函数来降低系统的复杂度。
@@ -216,5 +218,79 @@ class Timer(object):
         print('timer is running...')
 
 
-run_object(Timer(   ))
+run_object(Timer())
 
+# 这就是动态语言的“鸭子类型”，它并不要求严格的继承体系，一个对象
+# 只要“看起来像鸭子，走起路来像鸭子”，那它就可以被看做是鸭子。
+
+# 小结
+# 动态语言的鸭子类型特点决定了继承不像静态语言那样是必须的。
+
+print('======== 8-4 获取对象信息')
+
+# 判断对象类型
+print('对象类型：',type(12))
+print('对象类型：',type('str'))
+print('对象类型：',type(None))
+# 如果一个变量指向函数或者类，也可以用 type()判断
+print('对象类型：',type(Dog()))
+print('对象类型：',type(abs))
+print('对象类型：',type(max))
+print('type 数字 类型比较',type(12)==type(33))
+print('type int 类型比较',type(12)==int)
+print('type int 类型比较',type(12)==object)
+print('type int 类型比较',type(12)==float)
+print('type int 类型比较',type('22')==str)
+
+# 判断基本数据类型可以直接写 int， str 等，但如果要判断一个对象是否
+# 是函数怎么办？可以使用 types 模块中定义的常量
+import types
+
+def fn():
+    pass
+print('函数判断',type(fn)==types.FunctionType)
+print('函数判断',type(abs)==types.BuiltinFunctionType)
+print('函数判断',type(max)==types.BuiltinMethodType)
+print('函数判断',type(lambda x:x)==types.LambdaType)
+print('函数判断',type(x for x in range(10))==types.GeneratorType)
+
+print('使用isinstance()判断类型 dog is Dog=>',isinstance(dog,Dog))
+print('使用isinstance()判断类型 dog is Animal=>',isinstance(dog,Animal))
+# 能用 type()判断的基本类型也可以用 isinstance()判断：
+print('isinstance判断基本类型 int',isinstance(12,int))
+print('isinstance判断基本类型 bytes',isinstance(b'12',bytes))
+
+# 如果要获得一个对象的所有属性和方法，可以使用 dir()函数，它返回
+# 一个包含字符串的 list，
+print('获得一个对象的所有属性和方法:',dir('hello'))
+
+print('asdf'.__len__(),len('00'))
+
+print(hasattr(bart,'name'))# 有属性'name'吗？
+print(getattr(bart,'name'))# 获取属性'name'值
+print(getattr(bart,'noValue',404))# 如果noValue属性不存在，则赋一个默认值，404
+
+
+# 通过内置的一系列函数，我们可以对任意一个 Python 对象进行剖析，
+# 拿到其内部的数据。要注意的是，只有在不知道对象信息的时候，我们
+# 才会去获取对象信息。如果可以直接写：
+# sum = obj.x + obj.y
+# 就不要写：
+# sum = getattr(obj, 'x') + getattr(obj, 'y')
+# 一个正确的用法的例子如下：
+
+def readData(fp):
+    pass
+def readImage(fp):
+    if hasattr(fp,'read'):
+        return readData(fp)
+    return None
+
+
+
+print('========','8 - 5 实例属性和类属性')
+
+# page-184
+# 从上面的例子可以看出，在编写程序的时候，千万不要把实例属性和类
+# 属性使用相同的名字，因为相同名称的实例属性将屏蔽掉类属性，但是
+# 当你删除实例属性后，再使用相同的名称，访问到的将是类属性。

@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fd8887d2-fdbb-42be-aa04-f25c79414e85" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/lessones/Test5.py" afterPath="$PROJECT_DIR$/lessones/Test5.py" />
       <change beforePath="$PROJECT_DIR$/lessones/Test6.py" afterPath="$PROJECT_DIR$/lessones/Test6.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,7 +15,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/PythonTutorial$Unittests_for_Test5_test.coverage" NAME="Unittests for Test5.test Coverage Results" MODIFIED="1517204974531" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lessones" />
     <SUITE FILE_PATH="coverage/PythonTutorial$Test4.coverage" NAME="Test4 Coverage Results" MODIFIED="1519110581088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lessones" />
-    <SUITE FILE_PATH="coverage/PythonTutorial$Test6.coverage" NAME="Test6 Coverage Results" MODIFIED="1519114370418" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lessones" />
+    <SUITE FILE_PATH="coverage/PythonTutorial$Test6.coverage" NAME="Test6 Coverage Results" MODIFIED="1519535067423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lessones" />
     <SUITE FILE_PATH="coverage/PythonTutorial$Packing.coverage" NAME="Packing Coverage Results" MODIFIED="1504686999598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lessones" />
     <SUITE FILE_PATH="coverage/PythonTutorial$decorator.coverage" NAME="decorator Coverage Results" MODIFIED="1515924133052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lessones" />
     <SUITE FILE_PATH="coverage/PythonTutorial$Unittests_in_Test5_py.coverage" NAME="Unittests in Test5.py Coverage Results" MODIFIED="1517234473878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lessones" />
@@ -33,7 +32,7 @@
       <file leaf-file-name="Test2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lessones/Test2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2992">
+            <state relative-caret-position="0">
               <caret line="176" column="18" lean-forward="false" selection-start-line="176" selection-start-column="18" selection-end-line="176" selection-end-column="18" />
               <folding />
             </state>
@@ -43,7 +42,7 @@
       <file leaf-file-name="Test3.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lessones/Test3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4545">
+            <state relative-caret-position="663">
               <caret line="41" column="24" lean-forward="false" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="24" />
               <folding>
                 <element signature="e#49#58#0" expanded="true" />
@@ -55,7 +54,7 @@
       <file leaf-file-name="Test4.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lessones/Test4.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-467">
+            <state relative-caret-position="3485">
               <caret line="205" column="20" lean-forward="false" selection-start-line="205" selection-start-column="20" selection-end-line="205" selection-end-column="20" />
               <folding />
             </state>
@@ -65,8 +64,8 @@
       <file leaf-file-name="Test5.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lessones/Test5.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="56" column="22" lean-forward="true" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
+            <state relative-caret-position="952">
+              <caret line="56" column="22" lean-forward="false" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -75,18 +74,8 @@
       <file leaf-file-name="Test6.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lessones/Test6.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="218" column="20" lean-forward="false" selection-start-line="218" selection-start-column="20" selection-end-line="218" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="builtins.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.3/python_stubs/-1625016946/builtins.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="475" column="0" lean-forward="false" selection-start-line="475" selection-start-column="0" selection-end-line="475" selection-end-column="0" />
+            <state relative-caret-position="217">
+              <caret line="293" column="31" lean-forward="false" selection-start-line="293" selection-start-column="31" selection-end-line="295" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -95,7 +84,7 @@
       <file leaf-file-name="collection.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/extra/collection.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
+            <state relative-caret-position="272">
               <caret line="16" column="14" lean-forward="false" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
               <folding />
             </state>
@@ -593,12 +582,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928678" sideWeight="0.50297874" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928678" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29590288" sideWeight="0.505042" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42185128" sideWeight="0.49495798" order="2" side_tool="false" content_ui="tabs" x="42" y="23" width="1238" height="777" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42185128" sideWeight="0.49495798" order="2" side_tool="false" content_ui="tabs" x="42" y="23" width="1238" height="777" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32776934" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22268908" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -608,6 +596,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -659,6 +648,11 @@
           <line>444</line>
           <option name="timeStamp" value="36" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/lessones/Test6.py</url>
+          <line>270</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -667,7 +661,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="37" />
+      <option name="time" value="38" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -941,7 +935,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lessones/Test2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2992">
+        <state relative-caret-position="0">
           <caret line="176" column="18" lean-forward="false" selection-start-line="176" selection-start-column="18" selection-end-line="176" selection-end-column="18" />
           <folding />
         </state>
@@ -958,22 +952,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="41">
           <caret line="2029" column="8" lean-forward="false" selection-start-line="2029" selection-start-column="8" selection-end-line="2029" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lessones/Test7.py" />
     <entry file="file://$PROJECT_DIR$/lessones/Test5.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="56" column="22" lean-forward="true" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
+        <state relative-caret-position="952">
+          <caret line="56" column="22" lean-forward="false" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/extra/collection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
+        <state relative-caret-position="272">
           <caret line="16" column="14" lean-forward="false" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
           <folding />
         </state>
@@ -981,7 +974,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lessones/Test3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4545">
+        <state relative-caret-position="663">
           <caret line="41" column="24" lean-forward="false" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="24" />
           <folding>
             <element signature="e#49#58#0" expanded="true" />
@@ -999,7 +992,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lessones/Test4.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-467">
+        <state relative-caret-position="3485">
           <caret line="205" column="20" lean-forward="false" selection-start-line="205" selection-start-column="20" selection-end-line="205" selection-end-column="20" />
           <folding />
         </state>
@@ -1007,16 +1000,16 @@
     </entry>
     <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.3/python_stubs/-1625016946/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="475" column="0" lean-forward="false" selection-start-line="475" selection-start-column="0" selection-end-line="475" selection-end-column="0" />
+        <state relative-caret-position="29">
+          <caret line="276" column="4" lean-forward="false" selection-start-line="276" selection-start-column="4" selection-end-line="276" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lessones/Test6.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="218" column="20" lean-forward="false" selection-start-line="218" selection-start-column="20" selection-end-line="218" selection-end-column="20" />
+        <state relative-caret-position="217">
+          <caret line="293" column="31" lean-forward="false" selection-start-line="293" selection-start-column="31" selection-end-line="295" selection-end-column="31" />
           <folding />
         </state>
       </provider>
