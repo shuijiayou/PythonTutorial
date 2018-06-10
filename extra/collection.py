@@ -21,3 +21,7 @@ def f():
 
 g()
 f()
+
+
+import datetime
+print(datetime.datetime.today())
