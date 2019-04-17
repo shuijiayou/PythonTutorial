@@ -28,33 +28,32 @@ print(3 / 2)
 bicycles = ['trek', 'cannondale', 'redline', 'specialized']
 print(bicycles)
 print(bicycles[0])
-print(bicycles[-2])#返回倒数第二个值
+print(bicycles[-2])  # 返回倒数第二个值
 
-message = "我的第一辆自行车："+bicycles[0].title()
+message = "我的第一辆自行车：" + bicycles[0].title()
 print(message)
 
-#3.1 练习
-names = ['张三','李四','王五','周六','小明']
+# 3.1 练习
+names = ['张三', '李四', '王五', '周六', '小明']
 for x in names:
-    print(x,"早上好~")
+    print(x, "早上好~")
 
-#3.2 修改、添加和删除元素
+# 3.2 修改、添加和删除元素
 motorcycles = ['honda', 'yamaha', 'suzuki']
-motorcycles[0]='ducati'
+motorcycles[0] = 'ducati'
 print(motorcycles)
-#末尾添加元素
+# 末尾添加元素
 motorcycles.append('pada')
 print(motorcycles)
 
-#指定位置添加元素,指定新元素的索引和值
-motorcycles.insert(1,'new data')
+# 指定位置添加元素,指定新元素的索引和值
+motorcycles.insert(1, 'new data')
 print(motorcycles)
 
-#删除指定位置的元素
+# 删除指定位置的元素
 motorcycles = ['honda', 'yamaha', 'suzuki']
 del motorcycles[0]
-print("honda已经删除 新的结果："+str(motorcycles))
-
+print("honda已经删除 新的结果：" + str(motorcycles))
 
 # 有时候， 你要将元素从列表中删除， 并接着使用它的值。
 # 例如， 你可能需要获取刚被射杀的外星人的 x 和 y 坐标，
@@ -64,9 +63,23 @@ print("honda已经删除 新的结果："+str(motorcycles))
 # 术语弹出 （ pop） 源自这样的类比： 列表就像一个栈，
 # 而删除列表末尾的元素相当于弹出栈顶元素。
 motorcycles = ['honda', 'yamaha', 'suzuki']
-pop_motorcycles = motorcycles.pop(1)#pop()默认删除末尾的元素
+pop_motorcycles = motorcycles.pop(1)  # pop()默认删除末尾的元素，可以指定坐标进行删除操作
 print(motorcycles)
 print(pop_motorcycles)
+# 根据值删除元素
+motorcycles.remove('honda')
+print(motorcycles)
+
+# 3.2 练习
+
+human_names = ['华盛顿', '比尔·盖茨', '巴菲特', '米特尼克', '罗斯柴尔德']
+
+for human in human_names:
+    print(human, '我想邀您共进晚餐~')
 
 
+human_names.insert(0,'奥巴马')
+print('\n\n\n');
+for human in human_names:
+    print(human, '我想邀您共进晚餐~')
 
